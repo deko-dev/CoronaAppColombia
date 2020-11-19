@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "coronaapp-colombia": {
+      "hosting": {
+        "CoronaAppColombia": [
+          "coronaapp-colombia"
+        ]
+      }
+    }
+  }
+}

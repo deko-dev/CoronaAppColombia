@@ -1,0 +1,34 @@
+<header class="header">
+    <h1>
+        CoronaApp-Colombia
+    </h1>
+
+    <h3>WebApp para ver los ultimos datos sobre los casos de COVID-19 en Colombia</h3>
+</header>
+
+
+<main>
+
+    <div class="text-center" *ngIf="_loginService.usuario.uid">
+        <h3 class="login-titulo"> Bienvenido {{ _loginService.usuario.name }}!!</h3>
+        <button (click)="_loginService.logout()" class="btn btn-danger btn-s">
+      Salir
+    </button>
+    </div>
+
+    <app-login *ngIf="!_loginService.usuario.uid"></app-login>
+
+</main>
+
+
+
+<section class="text-center" [ngClass]="{' cargando': !_loginService.usuario.uid}">
+    <hr>
+    <app-datos *ngIf="_loginService.usuario.uid"></app-datos>
+</section>
+
+<footer class="footer" [ngClass]="{'absolute': !_loginService.usuario.uid}">
+    <p>
+        Powered By Decodev &copy; 2020
+    </p>
+</footer>

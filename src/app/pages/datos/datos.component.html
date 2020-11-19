@@ -1,0 +1,24 @@
+<div class="col-md-12 mt-5 mb-5" *ngIf="reporte">
+    <h3 class="login-titulo text-center">Ultima actualización {{ reporte.FECHA_ACTUALIZACION | date: 'short' }} </h3>
+
+    <div class="tarjetas">
+        <div class="tarjeta bg-danger">
+            <h3> Casos Ayer: <span> {{ reporte.NUEVOS_CASOS }} </span></h3>
+        </div>
+        <div class="tarjeta bg-secondary">
+            <h3>Muertes Ayer: <span>{{ reporte.NUEVOS_MUERTOS | number }}</span></h3>
+        </div>
+        <div class="tarjeta bg-success">
+            <h3>Recuperados Ayer: <span>{{ reporte.NUEVO_RECUPERADOS | number }}</span></h3>
+        </div>
+        <div class="tarjeta bg-danger">
+            <h3>Casos Totales: <span>{{ reporte.TOTAL_CASOS | number }}</span></h3>
+        </div>
+        <div class="tarjeta bg-dark">
+            <h3>Muertes Totales: <span>{{ reporte.TOTAL_MUERTES | number}}</span></h3>
+        </div>
+        <div class="tarjeta bg-success">
+            <h3>Recupardos en Total: <span>{{ reporte.TOTAL_RECUPERADOS | number}}</span></h3>
+        </div>
+    </div>
+</div>
